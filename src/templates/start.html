@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+{% block title %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/stylesStart.css')}}">
+<title>Inicio</title>
+{% endblock %}
+{% block body %}
+<div class="welcome-header">
+    <div class="header-top">
+        <a href="{{ url_for('logout') }}" class="logout-icon"
+            onclick="return confirm('¿Esta seguro que desea salir?')"><i class="bx bx-log-out"></i></a>
+    </div>
+
+
+
+    <h1 class="title">🤖 Bienvenido, {{ user[3] }} 🤖</h1>
+    <p>¡Somos UDEC-Soft, tu aliado en la gestión eficiente de proyectos de desarrollo de software! Somos una
+        innovadora startup que ha experimentado un crecimiento constante gracias a nuestra pasión por el desarrollo de
+        software de calidad. En nuestra búsqueda de la excelencia, nos dimos cuenta de que gestionar proyectos era un
+        desafío que requería una solución efectiva. Por eso, presentamos nuestra plataforma de gestión de proyectos,
+        diseñada para simplificar y optimizar cada paso del proceso. Con UDEC-Soft, puedes crear, editar y eliminar
+        proyectos, asignar tareas, gestionar recursos, hacer un seguimiento del tiempo y mantener una comunicación
+        fluida con tu equipo, todo en un solo lugar. Gracias por unirte a nosotros en esta emocionante aventura, y
+        juntos hagamos que
+        la gestión de proyectos sea más fácil y eficaz que nunca.</p>
+    <div class="container-logo">
+        <img src="\static\css\Udecsoft.png" alt="UdecSoft">
+    </div>
+
+    <nav class="navigation">
+        <ul>
+            <li><a href="{{ url_for('teams') }}"><i class='bx bx-group'></i>Mis Equipos</a></li>
+            <li><a href="{{ url_for('projects') }}"><i class='bx bx-folder-open'></i>Mis Proyectos</a></li>
+            <li><a href="{{ url_for('tasks') }}"><i class='bx bx-task'></i>Mis Tareas</a></li>
+        </ul>
+    </nav>
+
+
+</div>
+
+{% endblock %}
